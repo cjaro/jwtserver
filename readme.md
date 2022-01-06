@@ -14,7 +14,7 @@ Header:
   'alg': 'RS256'
 }
 ```
-- **x5t**: is an annoying base64 encoded fingerprint of the clients certificate
+- **x5t**: is a base64 encoded fingerprint of the client's certificate
 - **typ**: The type of token
 - **alg**: The encryption algorithm used
 

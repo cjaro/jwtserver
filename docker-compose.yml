@@ -1,0 +1,41 @@
+###############################################################################
+# :::JETULRIGHTS_START:::
+# Copyright 2021 Raytheon Company. 
+# This software was developed pursuant to Contract Number FA8730-16-F-0002 
+# with the U.S. government. The U.S. government's rights in and to this 
+# copyrighted software are as specified in DFARS 252.227-7014 which was made 
+# part of the contract.
+#
+# WARNING - This document contains Technical Data and / or technology whose 
+# export or disclosure to Non-U.S. Persons, wherever located, is restricted by 
+# the International Traffic in Arms Regulations (ITAR) (22 C.F.R. Section 
+# 120-130) or the Export Administration Regulations (EAR) (15 C.F.R. Section 
+# 730-774). This document CANNOT be exported (e.g., provided to a supplier 
+# outside of the United States) or disclosed to a Non-U.S. Person, wherever 
+# located, until a final Jurisdiction and Classification determination has been 
+# completed and approved by Raytheon, and any required U.S. Government 
+# approvals have been obtained. Violations are subject to severe criminal 
+# penalties.
+# :::JETULRIGHTS_END:::
+# 
+###############################################################################
+###############################################################################
+# FILE:  docker-compose.yml
+# 
+# CLASSIFICATION: Unclassified
+###############################################################################
+version: '3.7'
+
+services:
+  jwt_server:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SCRIPT_NAME: '/api/tc-tap'
+      S3_IMAGERY_BUCKET_NAME: tc-tap-imagery
+      S3_REGION_NAME: us-gov-west-1
+      # S3_ACCESS_KEY: MUST BE SET IN env_file
+      # S3_SECRET_KEY: MUST BE SET IN env_file
+    env_file:
+    - jwt_server.env

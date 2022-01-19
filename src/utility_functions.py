@@ -1,7 +1,7 @@
 from cryptography.hazmat.primitives import serialization as crypto_serialization
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.backends import default_backend as crypto_default_backend
-from datetime import datetime, timedelta, time
+from datetime import datetime, timedelta
 import jwt
 import uuid
 
@@ -25,17 +25,6 @@ public_key = key.public_key().public_bytes(
     crypto_serialization.Encoding.OpenSSH,
     crypto_serialization.PublicFormat.OpenSSH
 )
-
-
-# Generate & Decode to test 
-def encode_new_jwt(incoming_payload, incoming_key, incoming_algorithm):
-    print('Encoding JWT...')
-    return jwt.encode(incoming_payload, incoming_key, incoming_algorithm)
-
-
-def decode_new_jwt(incoming_jwt, decode_key, decode_algorithm):
-    print('Decoding JWT...')
-    return jwt.decode(incoming_jwt, decode_key, decode_algorithm)
 
 
 def generate_new_jwt(decoded_jwt, expiration):

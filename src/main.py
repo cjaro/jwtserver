@@ -1,13 +1,12 @@
 from base64 import b64decode
-from datetime import datetime, timedelta, time
-from flask import Flask, jsonify, request
-from utility_functions import key, private_key, public_key, generate_new_jwt
+from datetime import datetime, timedelta
+from flask import Flask
+from utility_functions import private_key, public_key, generate_new_jwt
 import jwt
 import logging
 import os
-import uuid
 
-
+dotenv
 # https://auth0.com/blog/developing-restful-apis-with-python-and-flask/
 app = Flask(__name__)
 logger = logging.getLogger(__name__)
@@ -19,6 +18,7 @@ logger = logging.getLogger(__name__)
 
 if __name__ == '__main__':
     now = datetime.now()
+    print(now)
     issued_at = now.timestamp()
     req_exp = os.getenv('JWT_REQUEST_EXPIRATION_MINUTES')
     expires_at = (now + timedelta(minutes=req_exp)).timestamp()

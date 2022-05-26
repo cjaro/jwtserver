@@ -21,12 +21,12 @@ Can be done visually on -> [jwt.io](https://jwt.io/#debugger-io).
 
 **Body:**
 ```{
-  'aud': 'https://portal.afw.weather.dev.solidstatescientific.com/adfs/oauth2/token',
-  'sub': '36b08ef1-d37d-4c0e-989f-ade4e5ce9d08',
-  'iss': '36b08ef1-d37d-4c0e-989f-ade4e5ce9d08',
-  'iat': 1637611163,
-  'jti': '09ffb6fa-9ece-42c2-bd4c-efd61da7e626',
-  'client_id': 'https://test-sandbox.afw.dev.solidstatescientific.com/graphql',
+  'aud': 'URL',
+  'sub': 'SUB',
+  'iss': 'ISSUER',
+  'iat': IAT,
+  'jti': 'JTI',
+  'client_id': 'URL',
   'exp': 1637611223
 }
 ```
